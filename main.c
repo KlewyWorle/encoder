@@ -13,7 +13,7 @@ int main()
     //printf("Wtf %s \n", ass);
     //printf("%d", strlen(ass));
     
-    char *b = encode("whatDo_yoou_think_of_the_niggers?");
+    char *b = encode("are_you_tolerant");
     char *r = decrypt(b);
         
     printf("final %s and size %d \n", r , strlen(r));
