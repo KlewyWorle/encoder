@@ -5,7 +5,7 @@
 char* decrypt(const char* word)
 {
     
-    char *result = malloc(sizeof(char) * 0);
+    char *result = malloc(sizeof(char) * 1);
 
     char *arr = malloc(sizeof(char) * (strlen(word) + 1));
     strcpy(arr, word);

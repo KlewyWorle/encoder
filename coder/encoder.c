@@ -21,14 +21,16 @@ char* getSym(char a)
 
 char* encode(const char* word)
 {
-    char* result = malloc(sizeof(char) * 0);
+    char* result = realloc(NULL, sizeof(char) * 1);
+    
+    result[0] = '\0'; 
 
     for(int i = 0; i < strlen(word); i++)
     {
         result = realloc(result, sizeof(char) * (strlen(result) + strlen(getSym(word[i]))) + 1);
-
-        size_t a = snprintf(result, 0, "%s", getSym(word[i])) + 1;
+        size_t a = snprintf(NULL, 0, "%s", getSym(word[i])) + 1;
         snprintf(result + strlen(result), a, "%s", getSym(word[i]));
+        result[strlen(result)] = '\0';
     
     }
     result = realloc(result, sizeof(char) * (strlen(result))); // -1
